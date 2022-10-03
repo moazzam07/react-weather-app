@@ -11,13 +11,15 @@ const App = () => {
 
   const [city,setCity] = useState("");
   const [weatherData,setWeatherData] = useState("");
+  const [geoData,setGeoData] = useState("");
   async function inputHandler() {
     if(city === "") alert('Enter a Vaid City Name...')
     const response = await Axios.get(
-      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=2945363fc971f134d5aa09136cb398dd
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=
       `,
     );
     setWeatherData(response.data);
+    setGeoData(response.data);
     console.log(response.data);
   }
 
